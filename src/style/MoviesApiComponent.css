@@ -1,0 +1,159 @@
+/* General reset for margins, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive Movies Container */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  min-height: 100vh;
+  background-image: url('/images/movie.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.movies-container::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.movie-card {
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%; /* Full width on mobile */
+  max-width: 250px; /* Maximum width for larger screens */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.movie-card h3, .movie-card p {
+  text-align: center;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-field, .search-button {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.search-field {
+  width: 200px;
+  margin-right: 10px;
+  z-index: 2;
+}
+
+.search-button {
+  background-color: green;
+  color: white;
+  border: none;
+  z-index: 2;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 60px;
+}
+
+.genre-label,
+.rating-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.genre-select,
+.rating-select {
+  margin-left: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.watch-button{
+  background-color: darkred;
+  font-weight: 900;
+  color: #ccc;
+}
+.watch-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .movie-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none;
+  }
+
+  .search-container, .dropdown-container {
+    flex-direction: column; /* Stack search and dropdowns vertically on mobile */
+    align-items: center; /* Center-align them */
+  }
+
+  .search-field, .search-button, .genre-select, .rating-select {
+    width: 100%; /* Full width for input fields */
+    margin-bottom: 10px; /* Spacing between elements */
+  }
+
+  .dropdown-container {
+    margin: 20px 0; /* Adjust spacing on mobile */
+  }
+
+  .movies-container {
+    justify-content: center;
+  }
+}
+
+/* Footer Adjustments */
+.footer {
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

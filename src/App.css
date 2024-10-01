@@ -1,0 +1,70 @@
+/* app.css */
+#root {
+  max-width: 1280px;
+  margin: 0 auto; /* Centering the content */
+  text-align: center;
+  flex-direction: column; /* Stack header, main, and footer vertically */
+  height: 100vh; /* Full height of viewport */
+  /* You can set a default background for the root if needed */
+  background-color: #f5f5f5; /* Light grey background as fallback */
+}
+
+.main-content {
+  flex-grow: 1; /* Allow main content to grow and take available space */
+  overflow-y: auto; /* Enable scrolling for main content */
+  padding: 20px; /* Add padding for better spacing */
+  
+  /* Background Image */
+  background-image: url('/public/images/movie.jpg'); /* Use the background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  
+  /* Optional: You can also set a semi-transparent background color */
+  background-color: rgba(255, 255, 255, 0.8); /* White with opacity */
+  
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #root {
+    padding: 0 10px; /* Add padding to prevent content from touching edges */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .main-content {
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  /* Adjust font sizes */
+  h1, h2, h3, p {
+    font-size: 1rem; /* Reduce font size for small devices */
+  }
+
+  /* Adjust links or buttons */
+  a {
+    padding: 10px; /* Increase tap area for links/buttons */
+    display: inline-block; /* Ensure proper spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Further reduce font size on very small devices */
+  }
+
+  .logo {
+    width: 100px; /* Reduce logo size */
+  }
+}
